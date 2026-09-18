@@ -26,7 +26,7 @@ const PageReveal = ({
       whileInView={animate}
       viewport={{
         once: true,
-        amount: 0.12,
+        amount: "some",
       }}
       transition={{
         duration: 0.75,
