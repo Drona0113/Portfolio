@@ -232,7 +232,7 @@ const Activity = () => {
                 href="https://github.com/Drona0113"
                 target="_blank"
                 rel="noreferrer"
-                className="w-fit border-2 border-black px-4 py-2 text-xs font-black transition-all duration-200 hover:-translate-y-1 hover:bg-black hover:text-white"
+                className="w-fit border-2 border-black px-4 py-2 text-xs font-black transition-all duration-200 hover:-translate-y-1  hover:text-white"
               >
                 VIEW GITHUB ↗
               </a>

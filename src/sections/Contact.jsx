@@ -174,7 +174,7 @@ const Contact = () => {
                 href="https://github.com/Drona0113"
                 target="_blank"
                 rel="noreferrer"
-                className="border-2 border-white px-6 py-3 text-sm font-black text-white transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:text-black"
+                className="border-2 border-white px-6 py-3 text-sm font-black text-white transition-all duration-200 hover:-translate-y-1 hover:bg-indigo-400 hover:border-indigo-400 "
               >
                 GITHUB ↗
               </a>
@@ -183,7 +183,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/kaja-drona-venkata-sai-gopinadh-443986269/"
                 target="_blank"
                 rel="noreferrer"
-                className="border-2 border-white px-6 py-3 text-sm font-black text-white transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:text-black"
+                className="border-2 border-white px-6 py-3 text-sm font-black text-white transition-all duration-200 hover:-translate-y-1  hover:bg-indigo-400 hover:border-indigo-40"
               >
                 LINKEDIN ↗
               </a>
