@@ -1,0 +1,303 @@
+.manga-panel {
+  position: relative;
+  border: 2px solid #111;
+  background: #f4f1ea;
+}
+
+.manga-panel::after {
+  content: '';
+  position: absolute;
+  inset: 8px -8px -8px 8px;
+  border: 2px solid #111;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ink-line {
+  position: relative;
+}
+
+.ink-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 70%;
+  height: 6px;
+  background: #111;
+  transform: skewX(-18deg);
+}
+
+.screentone {
+  background-image:
+    radial-gradient(circle, #111 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.manga-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.manga-hover {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.manga-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 #111;
+}
+
+
+.manga-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.manga-page::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(17, 17, 17, 0.08);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.panel-reveal {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition:
+    clip-path 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 500ms ease;
+}
+
+.panel-reveal.is-visible {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+
+/* =========================================
+   MANGA EXPERIENCE SYSTEM
+   ========================================= */
+
+.manga-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle center fold */
+.manga-page::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(17, 17, 17, 0.06);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Manga gutter */
+.manga-gutter {
+  position: relative;
+}
+
+.manga-gutter::after {
+  content: '';
+  display: block;
+  height: 18px;
+  margin-top: 18px;
+  border-top: 2px solid #111;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+}
+
+/* Ink separator */
+.ink-separator {
+  position: relative;
+  height: 14px;
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
+.ink-separator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: #111;
+  transform: translateY(-50%);
+}
+
+.ink-separator::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 35%;
+  top: 50%;
+  height: 5px;
+  background: #111;
+  transform: translateY(-50%) skewX(-18deg);
+}
+
+/* Halftone texture */
+.halftone {
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(17, 17, 17, 0.22) 1px,
+      transparent 1px
+    );
+  background-size: 7px 7px;
+}
+
+/* Strong manga panel */
+.ink-panel {
+  position: relative;
+  border: 2px solid #111;
+  background: #f4f1ea;
+  box-shadow: 5px 5px 0 #111;
+}
+
+/* Panel shadow moves slightly on hover */
+.ink-panel:hover {
+  box-shadow: 8px 8px 0 #111;
+}
+
+/* Manga narration */
+.manga-narration {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Page number */
+.page-number {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Small ink imperfections */
+.ink-mark {
+  position: relative;
+}
+
+.ink-mark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 55%;
+  height: 4px;
+  background: #111;
+  transform: skewX(-22deg);
+}
+
+/* Manga chapter heading */
+.chapter-title {
+  position: relative;
+  display: inline-block;
+}
+
+.chapter-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 65%;
+  height: 6px;
+  background: #111;
+  transform: skewX(-18deg);
+}
+
+/* Mobile: remove center fold */
+@media (max-width: 768px) {
+  .manga-page::before {
+    display: none;
+  }
+
+  .ink-separator::after {
+    right: 20%;
+  }
+}
+
+
+/* =========================================
+   SCROLL PAGE REVEAL
+   ========================================= */
+
+.manga-scene {
+  position: relative;
+}
+
+.manga-scene::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.12);
+  pointer-events: none;
+}
+
+/* Page-turn style edge */
+.page-turn-edge {
+  position: relative;
+  height: 24px;
+  margin: 0 auto;
+  max-width: 90rem;
+  overflow: hidden;
+}
+
+.page-turn-edge::before {
+  content: '';
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 50%;
+  height: 2px;
+  background: #111;
+  transform: translateY(-50%);
+}
+
+.page-turn-edge::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  top: 50%;
+  width: 22%;
+  height: 5px;
+  background: #111;
+  transform: translateY(-50%) skewX(-20deg);
+}
+
+/* Subtle section depth */
+.manga-scene > .manga-page {
+  isolation: isolate;
+}
+
+/* Keep mobile movement restrained */
+@media (max-width: 768px) {
+  .page-turn-edge {
+    height: 18px;
+  }
+
+  .page-turn-edge::after {
+    left: 8%;
+    width: 32%;
+  }
+}
