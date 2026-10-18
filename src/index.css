@@ -49,3 +49,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+

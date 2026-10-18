@@ -66,6 +66,10 @@ const About = () => {
             x: 0,
             rotate: 0,
           }}
+          whileHover={{
+            y: -3,
+            boxShadow: '8px 8px 0 #111',
+          }}
           viewport={{
             once: true,
             amount: 0.25,
@@ -139,6 +143,10 @@ const About = () => {
               x: 0,
               rotate: 0,
             }}
+            whileHover={{
+              y: -3,
+              boxShadow: '8px 8px 0 #f4f1ea',
+            }}
             viewport={{
               once: true,
               amount: 0.2,
@@ -200,6 +208,10 @@ const About = () => {
               opacity: 1,
               x: 0,
               rotate: 0,
+            }}
+            whileHover={{
+              y: -3,
+              boxShadow: '8px 8px 0 #111',
             }}
             viewport={{
               once: true,

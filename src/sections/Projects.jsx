@@ -23,6 +23,17 @@ const projects = [
     tech: ["MERN", "Razorpay", "JWT", "i18n"],
     github: "https://github.com/Drona0113/AgriMart",
     live: "https://agri-mart-orcin.vercel.app",
+    codeSnippet: `// RBAC Middleware
+const verifyRole = (roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({
+        message: 'Access denied'
+      });
+    }
+    next();
+  };
+};`,
   },
 
   {
@@ -42,6 +53,15 @@ const projects = [
       "Preserves local village history in a structured digital format, making community knowledge easier to access while giving authorized users control over maintaining the archive.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     github: "https://github.com/Drona0113/Gramacharitra-dyamic",
+    codeSnippet: `// MVC Controller Pattern
+class VillageController {
+  async getVillage(req, res) {
+    const village = await Village
+      .findById(req.params.id)
+      .populate('comments');
+    res.json(village);
+  }
+}`,
   },
 
   {
@@ -62,6 +82,15 @@ const projects = [
     tech: ["Python", "Streamlit", "SVR", "Scikit-learn"],
     github: "https://github.com/Drona0113/Crime-Count-Prediction-using-SVR",
     live: "https://drona0113-crime-count-prediction-using--appvisualization-e09yma.streamlit.app/",
+    codeSnippet: `# SVR Model Training
+from sklearn.svm import SVR
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+model = SVR(kernel='rbf', C=100, gamma=0.1)
+model.fit(X_scaled, y)`,
   },
 
   {
@@ -85,6 +114,22 @@ const projects = [
       "Helps manga creators move from a basic AI conversation to a persistent creative workspace where project context, visual references, and AI workflows stay connected.",
     tech: ["Python", "LLM APIs", "OpenRouter", "SQLite"],
     github: "https://github.com/Drona0113/Manga-Craft",
+    codeSnippet: `# Tool Calling System
+tools = [
+  {
+    "type": "function",
+    "function": {
+      "name": "analyze_panel",
+      "description": "Analyze manga panel",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "image": {"type": "string"}
+        }
+      }
+    }
+  }
+]`,
   },
 ];
 
@@ -453,6 +498,24 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* CODE SNIPPET */}
+                {project.codeSnippet && (
+                  <div className="border-t-2 border-black bg-gray-900 px-7 py-6 md:px-10">
+                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-gray-400">
+                      04 — CODE SNIPPET
+                    </p>
+                    <motion.pre
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                      className="mt-4 overflow-x-auto rounded border border-black/20 bg-gray-800 p-4 text-xs text-gray-300"
+                    >
+                      <code>{project.codeSnippet}</code>
+                    </motion.pre>
+                  </div>
+                )}
               </motion.article>
             );
           })}

@@ -69,6 +69,10 @@ const Activity = () => {
             y: 0,
             rotate: 0,
           }}
+          whileHover={{
+            y: -3,
+            boxShadow: '8px 8px 0 #111',
+          }}
           viewport={{
             once: true,
             amount: 0.2,

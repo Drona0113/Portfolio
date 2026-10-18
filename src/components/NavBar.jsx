@@ -1,7 +1,8 @@
-import React from 'react'
-import { motion } from 'motion/react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -17,6 +18,15 @@ const Navbar = () => {
         >
           DRONA.
         </a>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden border-2 border-black px-3 py-2 text-xs font-bold"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? '✕' : '☰'}
+        </button>
 
         <div className="hidden items-center gap-8 text-sm font-semibold md:flex">
           <a
@@ -55,7 +65,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="hidden items-center gap-2 md:flex">
           <a
             href="https://github.com/Drona0113"
             target="_blank"
@@ -76,6 +86,80 @@ const Navbar = () => {
         </div>
 
       </nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-b-2 border-black bg-[#f4f1ea]/95 px-3 py-4 backdrop-blur-sm"
+          >
+            <div className="flex flex-col gap-4 text-sm font-semibold">
+              <a
+                href="#about"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors hover:text-indigo-600"
+              >
+                ABOUT
+              </a>
+
+              <a
+                href="#skills"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors hover:text-indigo-600"
+              >
+                SKILLS
+              </a>
+
+              <a
+                href="#projects"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors hover:text-indigo-600"
+              >
+                WORK
+              </a>
+
+              <a
+                href="#activity"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors hover:text-indigo-600"
+              >
+                ACTIVITY
+              </a>
+
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors hover:text-indigo-600"
+              >
+                CONTACT
+              </a>
+
+              <div className="flex gap-2 pt-2">
+                <a
+                  href="https://github.com/Drona0113"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border-2 border-black  px-4 py-2 text-xs font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#f4f1ea] hover:text-black"
+                >
+                  GITHUB ↗
+                </a>
+
+                <a
+                  href="/Drona_Resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border-2 border-black  px-4 py-2 text-xs font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#f4f1ea] hover:text-black"
+                >
+                  RESUME ↗
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   )
 }
