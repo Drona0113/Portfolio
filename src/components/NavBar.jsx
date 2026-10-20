@@ -76,7 +76,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="/DRONA_RESUME.pdf"
+            href="/Drona_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="border-2 border-black  px-4 py-2 text-xs font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#f4f1ea] hover:text-black"
@@ -148,7 +148,7 @@ const Navbar = () => {
                 </a>
 
                 <a
-                  href="/DRONA_RESUME.pdf"
+                  href="/Drona_Resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="border-2 border-black  px-4 py-2 text-xs font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#f4f1ea] hover:text-black"
